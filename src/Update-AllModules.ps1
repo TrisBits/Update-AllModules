@@ -81,7 +81,8 @@ PROCESS {
                 else {
                     Write-Verbose -Message "Uninstalling Old Versions for Module: $($installedModule.Name)"
                     Try {
-                        Get-InstalledModule -Name $installedModule.Name -AllVersions | Where-Object { $_.Version -ne $repositoryModule.Version } | Uninstall-Module -Force
+                        # ErrorAction Stop is used for Uninstall-Module to Catch any non-terminating errors due to an in use module
+                        Get-InstalledModule -Name $installedModule.Name -AllVersions | Where-Object { $_.Version -ne $repositoryModule.Version } | Uninstall-Module -Force -ErrorAction Stop
                     }
                     Catch {
                         Write-Warning -Message "$($installedModule.Name) version: $($installedModule.Version) may require manual uninstallation."
