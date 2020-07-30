@@ -19,7 +19,7 @@
     GitHub: https://github.com/TrisBits/Update-AllModules
     Created: 2020-07-26
     License: MIT
-    Version: 1.0.0
+    Version: 1.0.1
 #>
 
 [CmdletBinding()]
