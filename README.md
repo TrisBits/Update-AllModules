@@ -35,7 +35,7 @@ Will provide Verbose messaging during execution.
 ## Notes
 
 If you've downloaded the PowerShell script (or any other) and recieve a "not digitally signed" error due to your execution policy.
-A simple solution is to execute the PowerShell command **[Unblock-File -Path](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7) `<powershellScriptPath>`**
+A simple solution is to execute the PowerShell command **[Unblock-File -Path](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7) `<ScriptPath>`**
 
 ## License
 
