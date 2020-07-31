@@ -4,7 +4,6 @@
     "recommendations": [
         "ms-vscode.PowerShell",
         "mhutchie.git-graph",
-        "davidanson.vscode-markdownlint",
-        "huntertran.auto-markdown-toc"
+        "davidanson.vscode-markdownlint"
     ]
 }

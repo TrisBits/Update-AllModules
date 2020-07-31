@@ -17,7 +17,7 @@
     .NOTES
     Author: TrisBits
     GitHub: https://github.com/TrisBits/Update-AllModules
-    Created: 2020-07-26
+    Created: 2020-07-29
     License: MIT
     Version: 1.0.1
 #>

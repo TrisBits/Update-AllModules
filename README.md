@@ -1,11 +1,12 @@
 # Update-AllModules
 
-[![Version Badge](https://img.shields.io/badge/Version-1.0.0-blue)](https://github.com/TrisBits/Update-AllModules/blob/master/src/Update-AllModules.ps1)
+[![Version Badge](https://img.shields.io/badge/Version-1.0.1-blue)](https://github.com/TrisBits/Update-AllModules/blob/master/src/Update-AllModules.ps1)
 <!-- TOC -->
 
-- [Update-AllModules](#update-allmodules)
+- [Update-AllModules](https://github.com/TrisBits/Update-AllModules/blob/master/src/Update-AllModules.ps1)
   - [Description](#description)
   - [Example](#example)
+  - [Notes](#notes)
   - [License](#license)
 
 <!-- /TOC -->
@@ -22,14 +23,19 @@ Will set the PowerShell Gallery as a trusted repository, when run with elevated 
 Executing the following, will update all currently installed modules.
 
 ```powershell
-Update-AllModules
+.\Update-AllModules.ps1
 ```
 
 Will provide Verbose messaging during execution.
 
 ```powershell
-Update-AllModules -Verbose
+.\Update-AllModules -Verbose
 ```
+
+## Notes
+
+If you've downloaded the PowerShell script (or any other) and recieve a "not digitally signed" error due to your execution policy.
+A simple solution is to execute the PowerShell command **[Unblock-File -Path](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7) `<powershellScriptPath>`**
 
 ## License
 
