@@ -17,9 +17,9 @@
     .NOTES
     Author: TrisBits
     GitHub: https://github.com/TrisBits/Update-AllModules
-    Created: 2020-07-26
+    Created: 2020-07-29
     License: MIT
-    Version: 1.0.0
+    Version: 1.0.1
 #>
 
 [CmdletBinding()]
@@ -81,7 +81,8 @@ PROCESS {
                 else {
                     Write-Verbose -Message "Uninstalling Old Versions for Module: $($installedModule.Name)"
                     Try {
-                        Get-InstalledModule -Name $installedModule.Name -AllVersions | Where-Object { $_.Version -ne $repositoryModule.Version } | Uninstall-Module -Force
+                        # ErrorAction Stop is used for Uninstall-Module to Catch any non-terminating errors due to an in use module
+                        Get-InstalledModule -Name $installedModule.Name -AllVersions | Where-Object { $_.Version -ne $repositoryModule.Version } | Uninstall-Module -Force -ErrorAction Stop
                     }
                     Catch {
                         Write-Warning -Message "$($installedModule.Name) version: $($installedModule.Version) may require manual uninstallation."
