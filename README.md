@@ -1,6 +1,7 @@
 # Update-AllModules
 
-[![Version Badge](https://img.shields.io/badge/Version-1.0.1-blue)](https://github.com/TrisBits/Update-AllModules/blob/master/src/Update-AllModules.ps1)
+![PSScriptAnalyzer](https://github.com/TrisBits/Update-AllModules/actions/workflows/powershell-analysis.yml/badge.svg)
+
 <!-- TOC -->
 
 - [Update-AllModules](https://github.com/TrisBits/Update-AllModules/blob/master/src/Update-AllModules.ps1)
