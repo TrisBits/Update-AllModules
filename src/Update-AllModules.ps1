@@ -13,13 +13,17 @@
     None
 
     .EXAMPLE
+    Update all modules and delete old modules if not currently loaded.
+    .\Update-AllModules.ps1
+
+    Add verbose output during execution.
+    .\Update-AllModules -Verbose
 
     .NOTES
     Author: TrisBits
     GitHub: https://github.com/TrisBits/Update-AllModules
-    Created: 2020-07-29
     License: MIT
-    Version: 1.0.1
+    Version: 1.0.2
 #>
 
 [CmdletBinding()]
@@ -47,11 +51,15 @@ BEGIN {
 
 PROCESS {
     $allInstalledModules = Get-InstalledModule
-    [int]$i = 100 / $allInstalledModules.Count
+    [int]$incrementAmount = 100 / $allInstalledModules.Count
+    [int]$currentProgress = 1 # Provides users with feedback that something is happening
 
     foreach ($installedModule in $allInstalledModules) {
-        Write-Progress -Activity 'Update All Modules in Progress' -Status "$i% Complete:" -PercentComplete $i -CurrentOperation "Processing Module: $($installedModule.Name)"
-        $i++
+        if ($currentProgress -gt 100) {
+            $currentProgress = 100
+        }
+        Write-Progress -Activity 'Update All Modules in Progress' -Status "$currentProgress% Complete:" -PercentComplete $currentProgress -CurrentOperation "Processing Module: $($installedModule.Name)"
+        $currentProgress += $incrementAmount
 
         # Get information about the newest version in the repository
         if (-not(Find-Module -Name $installedModule.Name -ErrorAction SilentlyContinue)) {
