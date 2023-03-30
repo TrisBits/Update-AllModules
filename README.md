@@ -1,6 +1,6 @@
 # Update-AllModules
 
-![PSScriptAnalyzer](https://github.com/TrisBits/Update-AllModules/actions/workflows/powershell-analysis.yml/badge.svg)
+![PSScriptAnalyzer](https://github.com/TrisBits/Update-AllModules/actions/workflows/powershell.yml/badge.svg)
 
 <!-- TOC -->
 
