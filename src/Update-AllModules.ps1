@@ -23,7 +23,7 @@
     Author: TrisBits
     GitHub: https://github.com/TrisBits/Update-AllModules
     License: MIT
-    Version: 1.0.2
+    Version: 1.0.3
 #>
 
 [CmdletBinding()]
